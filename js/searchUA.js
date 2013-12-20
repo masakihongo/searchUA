@@ -4,7 +4,7 @@
     window._UA = {};
     var UA = window._UA;
     UA.name = window.navigator.userAgent.toLowerCase();
-    
+
     UA.isIE = (UA.name.indexOf('msie') >= 0 || UA.name.indexOf('trident') >= 0);
     UA.isiPhone = UA.name.indexOf('iphone') >= 0;
     UA.isiPod = UA.name.indexOf('ipod') >= 0;
@@ -53,6 +53,4 @@
     if (UA.isTablet) {
         $('body').addClass('tablet');
     }
-
 }(this, jQuery));
-
