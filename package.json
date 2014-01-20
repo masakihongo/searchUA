@@ -1,0 +1,18 @@
+{
+  "name": "searchua",
+  "version": "0.1.0",
+  "description": "search usearagent",
+  "main": "Gruntfile.js",
+  "author": "Masaki Hongo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/masakihongo/searchUA"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-jshint": "~0.8.0",
+    "load-grunt-tasks": "~0.2.1"
+  }
+}
