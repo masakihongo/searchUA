@@ -1,56 +1,56 @@
 (function (window, $, undefined) {
     'use strict';
 
-    window._UA = {};
-    var UA = window._UA;
-    UA.name = window.navigator.userAgent.toLowerCase();
+    window.ua = {};
+    var ua = window.ua;
+    ua.name = window.navigator.userAgent.toLowerCase();
 
-    UA.isIE = (UA.name.indexOf('msie') >= 0 || UA.name.indexOf('trident') >= 0);
-    UA.isiPhone = UA.name.indexOf('iphone') >= 0;
-    UA.isiPod = UA.name.indexOf('ipod') >= 0;
-    UA.isiPad = UA.name.indexOf('ipad') >= 0;
-    UA.isiOS = (UA.isiPhone || UA.isiPod || UA.isiPad);
-    UA.isAndroid = UA.name.indexOf('android') >= 0;
-    UA.isTablet = (UA.isiPad || (UA.isAndroid && UA.name.indexOf('mobile') < 0));
+    ua.isIE = (ua.name.indexOf('msie') >= 0 || ua.name.indexOf('trident') >= 0);
+    ua.isiPhone = ua.name.indexOf('iphone') >= 0;
+    ua.isiPod = ua.name.indexOf('ipod') >= 0;
+    ua.isiPad = ua.name.indexOf('ipad') >= 0;
+    ua.isiOS = (ua.isiPhone || ua.isiPod || ua.isiPad);
+    ua.isAndroid = ua.name.indexOf('android') >= 0;
+    ua.isTablet = (ua.isiPad || (ua.isAndroid && ua.name.indexOf('mobile') < 0));
 
-    if (UA.isIE) {
-        UA.verArray = /(msie|rv:?)\s?([0-9]{1,})([\.0-9]{1,})/.exec(UA.name);
-        if (UA.verArray !== null) {
-            UA.ver = parseInt(UA.verArray[2], 10);
+    if (ua.isIE) {
+        ua.verArray = /(msie|rv:?)\s?([0-9]{1,})([\.0-9]{1,})/.exec(ua.name);
+        if (ua.verArray !== null) {
+            ua.ver = parseInt(ua.verArray[2], 10);
         }
     }
-    if (UA.isiOS) {
-        UA.verArray = /(os)\s([0-9]{1,})([\_0-9]{1,})/.exec(UA.name);
-        if (UA.verArray !== null) {
-            UA.ver = parseInt(UA.verArray[2], 10);
+    if (ua.isiOS) {
+        ua.verArray = /(os)\s([0-9]{1,})([\_0-9]{1,})/.exec(ua.name);
+        if (ua.verArray !== null) {
+            ua.ver = parseInt(ua.verArray[2], 10);
         }
     }
-    if (UA.isAndroid) {
-        UA.verArray = /(android)\s([0-9]{1,})([\.0-9]{1,})/.exec(UA.name);
-        if (UA.verArray !== null) {
-            UA.ver = parseInt(UA.verArray[2], 10);
+    if (ua.isAndroid) {
+        ua.verArray = /(android)\s([0-9]{1,})([\.0-9]{1,})/.exec(ua.name);
+        if (ua.verArray !== null) {
+            ua.ver = parseInt(ua.verArray[2], 10);
         }
     }
 
-    if (UA.isIE) {
-        $('body').addClass('ie ie_' + UA.ver);
+    if (ua.isIE) {
+        $('body').addClass('ie ie_' + ua.ver);
     }
-    if (UA.isiPhone) {
+    if (ua.isiPhone) {
         $('body').addClass('iPhone');
     }
-    if (UA.isiPod) {
+    if (ua.isiPod) {
         $('body').addClass('iPod');
     }
-    if (UA.isiPad) {
+    if (ua.isiPad) {
         $('body').addClass('iPad');
     }
-    if (UA.isiOS) {
-        $('body').addClass('iOS iOS_' + UA.ver);
+    if (ua.isiOS) {
+        $('body').addClass('iOS iOS_' + ua.ver);
     }
-    if (UA.isAndroid) {
-        $('body').addClass('android android_' + UA.ver);
+    if (ua.isAndroid) {
+        $('body').addClass('android android_' + ua.ver);
     }
-    if (UA.isTablet) {
+    if (ua.isTablet) {
         $('body').addClass('tablet');
     }
 }(this, jQuery));
