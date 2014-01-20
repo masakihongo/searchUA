@@ -15,19 +15,19 @@
 
     if (ua.isIE) {
         ua.verArray = /(msie|rv:?)\s?([0-9]{1,})([\.0-9]{1,})/.exec(ua.name);
-        if (ua.verArray !== null) {
+        if (ua.verArray) {
             ua.ver = parseInt(ua.verArray[2], 10);
         }
     }
     if (ua.isiOS) {
         ua.verArray = /(os)\s([0-9]{1,})([\_0-9]{1,})/.exec(ua.name);
-        if (ua.verArray !== null) {
+        if (ua.verArray) {
             ua.ver = parseInt(ua.verArray[2], 10);
         }
     }
     if (ua.isAndroid) {
         ua.verArray = /(android)\s([0-9]{1,})([\.0-9]{1,})/.exec(ua.name);
-        if (ua.verArray !== null) {
+        if (ua.verArray) {
             ua.ver = parseInt(ua.verArray[2], 10);
         }
     }
